@@ -32,12 +32,12 @@ class BoggleBoard():
             15: 'HLNNRZ',
             16: 'DEILRX'
         }
-        line_1 = ''.join(random.choice(boggle_dice[random.randint(1, 16)])for i in range(4))
-        line_2 = ''.join(random.choice(boggle_dice[random.randint(1, 16)])for i in range(4))
-        line_3 = ''.join(random.choice(boggle_dice[random.randint(1, 16)])for i in range(4))
-        line_4 = ''.join(random.choice(boggle_dice[random.randint(1, 16)])for i in range(4))
+        line_1 = ' '.join(random.choice(boggle_dice[random.randint(1, 16)])for i in range(4))
+        line_2 = ' '.join(random.choice(boggle_dice[random.randint(1, 16)])for i in range(4))
+        line_3 = ' '.join(random.choice(boggle_dice[random.randint(1, 16)])for i in range(4))
+        line_4 = ' '.join(random.choice(boggle_dice[random.randint(1, 16)])for i in range(4))
         
-        print(f'{line_1},\n {line_2},\n {line_3},\n {line_4}')
+        print(f'{line_1}\n{line_2}\n{line_3}\n{line_4}')
 
 
     #This shows the empty game upon initialization
