@@ -1,0 +1,28 @@
+
+/* Center the grid container on the screen */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    grid-template-rows: repeat(2,1fr); /* 2 rows */
+    gap: 0.5rem; /* Space between grid items */
+    height: 85vh; /* Full viewport height */
+    width: 100vw;
+    align-self: center;
+    justify-self: center;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+  }
+  
+  /* Style individual grid items */
+  .grid-item {
+    display: flex; /* Use Flexbox for text centering */
+    justify-content: center; /* Center text horizontally */
+    align-items: center; /* Center text vertically */
+    background-color: #f59e0b; /* Amber background */
+    height: 100%; /* Fixed height */
+    width: auto; /* Fixed width */
+    font-size: 24px; /* Text size */
+    font-weight: bold; /* Bold text */
+    color: white; /* Text color */
+    border-radius: 8px; /* Rounded corners */
+  }

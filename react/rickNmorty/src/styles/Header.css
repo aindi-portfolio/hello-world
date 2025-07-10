@@ -1,0 +1,11 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    background-color: #f3f4f6; /* Light gray background */
+    border: 1px solid #000000; /* Light gray border */
+    padding: 0;
+    margin: 0;
+}
