@@ -1,6 +1,15 @@
 import Header from "../components/Header";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 
 export default function Characters() {
+    const [characters, setCharacters] = useState([]);
+
+    const fetchCharacters = async() => {
+        response = await axios.get("https://rickandmortyapi.com/api/character");
+        console.log(response.data);
+    }
+
     return (
         <>
             <Header />
