@@ -3,6 +3,9 @@ import { createBrowserRouter } from "react-router-dom";
 import App from "./App";
 import HomePage from "./pages/HomePage"
 import Characters from "./pages/Characters";
+import Locations from "./pages/Locations";
+import Episodes from "./pages/Episodes";
+import About from "./pages/About";
 
 const router = createBrowserRouter([
   {
@@ -16,17 +19,25 @@ const router = createBrowserRouter([
       {
         path: "/characters",
         element: <Characters />
+      },
+      {
+        path: "/locations",
+        element: <Locations />
+      },
+      {
+        path: "/episodes",
+        element: <Episodes />
+      },
+      {
+        path: "/about",
+        element: <About />
       }
-    ],
+    ]
   },
   {
     path: "*",
-    ErrorBoundary: () => <div>Something went wrong!</div>,
+    element: <div>404 Not Found</div>
   }
 ]);
 
 export default router;
-
-
-
-//// When you come back, add more coponents to the homepage, like a footer and a list of characters.
