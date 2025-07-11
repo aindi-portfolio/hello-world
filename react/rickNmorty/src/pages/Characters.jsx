@@ -1,22 +1,39 @@
 import Header from "../components/Header";
-import React, { useState, useEffect } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import axios from "axios";
+import CharacterCard from "../components/CharacterCard";
+import Button from "react-bootstrap/Button"; // can also import Col, Row from "react-bootstrap" if needed
+import CharacterSearch from "../components/CharacterSearch";
 
 export default function Characters() {
     const [characters, setCharacters] = useState([]);
+    const inputRef = useRef(null); // Create a ref for the input field
 
-    const fetchCharacters = async() => {
-        response = await axios.get("https://rickandmortyapi.com/api/character");
-        console.log(response.data);
+    const handleSearch = async() => {
+        await CharacterSearch(inputRef, characters, setCharacters);
     }
 
     return (
         <>
             <Header />
-            <div className="characters-page">
+            <div className="characters-page flex flex-col items-center">
                 <h1>Characters Page</h1>
-                <p>This is the Characters page where you can find information about various characters from the Rick and Morty universe.</p>
-                {/* You can add more content or components related to characters here */}
+                {/* Search Input */}
+                <input
+                    type="text" 
+                    placeholder="Search for a character..." 
+                    className="charSearch text-center" 
+                    ref={inputRef} // Attach the ref to the input field
+                />
+
+                {/* Search Button */}
+                <Button onClick={handleSearch}>Search</Button>
+
+                {/* Character Cards */}
+                {characters.length > 0 && characters.map(character => (
+                    <CharacterCard key={character.id} character={character} />))}
+
+                {characters.length === 0 && <p>No characters found. Please try a different search.</p>}
             </div>
         </>
     );
